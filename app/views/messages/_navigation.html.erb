@@ -1,0 +1,11 @@
+<nav>
+  <p>
+    <%=current_user.name%>
+    <%=link_to "New Mail", new_message_path, {:remote => true,:id => "new-mail-button"}%>
+  </p>
+  <ul>
+    <li><a href="index.html">Mails</a></li>
+    <li><a href="account.html">Account</a></li>
+    <li><a href="#">Log out</a></li>
+  </ul>
+</nav>

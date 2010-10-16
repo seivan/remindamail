@@ -1,0 +1,25 @@
+<%=content_for :header do%>
+  <%= render :partial => "navigation" %>
+<%end%>
+<%= render :partial => "statistics" %>
+	<section>
+			<div id="toggle-view">
+				<%=link_to "Not Sent", messages_path(:sent => false), {:id => "left", :class => "current"}%>
+        <%=link_to "Sent", messages_path(:sent => true),{:id => "right"}%>
+			</div>
+					
+			<h2>Queue</h2>
+			
+			<table class="list">
+				<thead>
+					<tr><td>Subject</td><td>Arrives on</td><td>Created</td></tr>
+				</thead>
+							
+				<tbody>
+				  <%=render @messages%>
+				</tbody>
+			
+			</table>
+			<%= will_paginate @messages %>
+		</section>
+		

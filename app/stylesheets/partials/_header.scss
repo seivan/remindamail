@@ -1,0 +1,55 @@
+header[role="banner"]{
+
+	padding-top: $space + 2em;
+	height: 7em;
+	border-bottom: 1px solid #eee;
+	margin-bottom: 1em;
+	@include clearfix;
+	
+	h1{
+		float: left; 
+		@include font(4.8em, 1);
+		
+		a{
+			font-family: Ballpark, "Brush Script MT", cursive;
+			color: #363636;
+			text-decoration: none;
+			font-weight: normal;
+		}
+	}
+	
+	nav{
+		position: absolute;
+		bottom: ($space / 2);
+		right: 0;
+		@include column(220);
+		
+		a#new-mail-button{
+			@include button(lighten($comp, 10%));
+			color: #fff;
+			text-shadow: rgba(0,0,0, 0.6) 0 1px 0;
+			position: absolute;
+			right: 0;
+			top: -0.3em;
+			@include box-shadow($comp 0 1px 4px);
+			
+			&:active{
+				top: -0.3em;
+			}
+		}
+		
+		ul{
+			@include clearfix;
+			position: absolute;
+			bottom: -2.3em;
+			right: 0;
+			width: 100%;
+			
+			li{
+				float: left;
+				margin-right: 15%;
+				font-size: 1.2em;
+			}
+		}
+	}
+}

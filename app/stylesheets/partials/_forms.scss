@@ -1,0 +1,66 @@
+input[type="text"], input[type="email"], textarea{
+	padding: 10px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 0;
+	@include box-shadow(rgba(0,0,0, 0.6) 0 1px 2px);
+	@include transition(box-shadow 0.2s ease-out);	
+	background-color: #f9f9f9;
+	width: 100%;
+	-webkit-appearance: none;
+	cursor: text;
+	font-family: $sans;
+	
+	&:focus{
+		outline: none;
+		@include box-shadow(darken($comp, 5%) 0 0 5px);
+		background-color: #fff;
+	}
+}
+
+
+input[type="text"], input[type="email"]{
+	font-size: 2em;
+	@include transition(all 0.15s ease-out);
+	font-family: "American Typewriter", Georgia, "Courier New", serif;
+		
+	&:hover{
+	
+		&::-webkit-input-placeholder{
+			color: #000;
+		}
+	}
+
+}
+
+
+input[type="submit"]{
+	min-width: 70px;
+	font-size: 1.3em;
+}
+
+textarea{
+	font: normal 1.4em/1.5 $serif;
+	resize: vertical;
+}
+
+label{
+	font: bold 1.3em/1 $sans;
+	color: #555;
+}
+
+select{
+	-webkit-appearance: none;
+	@include border-radius(0);
+	border: 0;
+	border-bottom: 1px dotted #bbb;
+	font: normal 2em/1 "American Typewriter", Georgia, "Courier New", serif;
+	padding: 2px;
+	width: 60px;
+	outline: none;
+}
+
+
+
+

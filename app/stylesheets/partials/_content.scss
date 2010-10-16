@@ -1,0 +1,56 @@
+section[role="main"]{
+	@include clearfix;	
+	
+	h1{
+		line-height: 69px;
+		margin-bottom: 1em;
+		border-bottom: 1px solid #eee;
+	}
+	
+	
+
+
+/* =TABLE */
+/*-----------------------------------------*/
+
+table.list{
+	width: 100%;
+	font: 1.4em/1 $serif;
+	
+	thead tr{
+		font-style: italic;
+		height: 20px;
+		color: #555;
+	}
+	
+	td{
+		@include column(160);
+	}
+	
+	tbody tr > td:first-child{
+		@include column(320);
+	}
+	tbody{
+		tr{
+			height: 40px;
+			border-bottom: 1px solid #eee;
+			
+			td{
+				vertical-align: middle;
+				
+				a{
+					display: block;
+					max-width: 90%;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					height: 1.2em;
+				}
+			}
+		}
+	}
+}
+
+
+	
+}

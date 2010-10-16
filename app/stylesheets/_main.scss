@@ -1,0 +1,252 @@
+@mixin row{
+	height: 6em;
+	margin-bottom: 2em;
+}
+
+
+/*	=MAIN
+	------------------------------------------------------ */
+	
+.static{
+	border-bottom: 1px dotted #aaa;
+}
+
+/*	=LINKS
+	------------------------------------------------------ */
+
+a{
+	color: $accent;
+	font-family: $sans;
+	font-weight: bold;
+	text-decoration: none;
+	@include transition(color 0.2s ease-out);
+}
+
+a:hover{
+	color: #000;
+}
+
+a.current{	
+	color: #363636;
+	cursor: default;
+}
+	
+
+/*	=HEADINGS
+	------------------------------------------------------ */
+	
+h1{
+	font-size: 2em;
+}
+
+h2{
+	font: bold 1.8em/1.333 $sans;
+	color: #000;
+	margin-bottom: 1.1111em;
+}
+
+h3{
+	font-size: 1.6em;
+	margin-bottom: 1.25em;
+	font-style: italic;
+}
+
+
+/*	=HEADER
+	------------------------------------------------------ */
+	
+@import "partials/header";
+
+
+
+/* =CONTENT */
+/*-----------------------------------------*/
+
+@import "partials/content";
+
+
+
+/* =NEW MAIL */
+/*-----------------------------------------*/
+
+@import "partials/new";
+
+
+
+/* =FORMS */
+/*-----------------------------------------*/
+
+@import "partials/forms";
+
+
+
+/* =FRONTPAGE */
+/*-----------------------------------------*/
+
+
+.home section[role="main"]{
+
+	
+	#toggle-view{
+		margin: 0 auto;
+		width: 150px;
+		
+		a{
+			@include button;
+			font-size: 1.2em;
+			
+			&#left{
+				-webkit-border-top-right-radius: 0;
+				-webkit-border-bottom-right-radius: 0;
+				-moz-border-radius-topright: 0;
+				-moz-border-radius-bottomright: 0;
+			}
+			&#right{
+				-webkit-border-top-left-radius: 0;
+				-webkit-border-bottom-left-radius: 0;
+				-moz-border-radius-topleft: 0;
+				-moz-border-radius-bottomleft: 0;
+				border-left-color: #eee;
+			}
+		}
+
+	}
+	
+}
+
+
+/* =VIEW MAIL */
+/*-----------------------------------------*/
+
+.view{
+
+	h3{
+		float: left;
+	}
+	
+	h3 strong{
+		font-size: 0.9em;
+		font-style: normal;
+	}
+	
+	.message-text{
+		@include column(380);
+		float: right;
+	
+		p{
+			margin-bottom: 1.5em;
+		}
+	}
+
+}
+
+
+/* =LOGIN */
+/*-----------------------------------------*/
+
+@import "partials/login";
+
+
+
+/* =MODAL */
+/*-----------------------------------------*/
+
+
+@import "partials/modal";
+
+
+/* =MESSAGES */
+/*-----------------------------------------*/
+
+@-webkit-keyframes pulsate{
+	0%{background-color: lighten(#D10000, 5%);}
+	50%{background-color: lighten(#D10000, 20%);}
+	100%{background-color: lighten(#D10000, 5%);}
+}
+
+div.flash{
+	margin-bottom: 2em;
+	border: 1px solid #ddd;
+	@include border-radius(0.2em);
+
+
+	p{
+		font-family: $sans;
+		padding: 0.5em 0;
+		font-weight: bold;
+		text-align: center;
+		color: #fff;
+		text-shadow: #000 0 1px 0;
+	}
+	
+
+}
+
+div.flash_success p{
+	border-color: green;
+	@include gradient( transparentize(#37AB33, 0.2), #298226);
+}
+
+div#errorExplanation{
+	margin-bottom: 2em;
+	border: 1px solid #ddd;
+	@include border-radius(0.2em);	
+	
+	p{	
+		border-color: #990000;
+		background-color: #D10000;
+		@include gradient( transparent, #B30000);
+		-webkit-animation-name: pulsate;
+		-webkit-animation-duration: 2s;
+		-webkit-animation-timing-function: linear;
+		-webkit-animation-iteration-count: infinite;
+		font-family: $sans;
+		padding: 0.5em 0;
+		font-weight: bold;
+		text-align: center;
+		color: #fff;
+		text-shadow: #000 0 1px 0;
+	}
+
+	ul{
+		list-style-type: square;
+		width: 50%;
+		margin: 1em 0 1em 30%;
+	}
+	li{
+		font-size: 1.3em;
+		font-family: $sans;
+		font-weight: bold;
+	}
+}
+
+div.flash_notice p{
+	border-color: #C4BE00;
+	@include gradient( transparentize(#F7F4A1, 0.2), #F0EC7A);
+	color: #363636;
+	text-shadow: #fff 0 1px 0;
+}
+
+
+/*	=FOOTER
+	------------------------------------------------------ */
+	
+footer[role="contentinfo"]{
+	@include row;
+	margin-top: 2em;
+	padding-top: 2em;
+	border-top: 3px solid #333;
+	
+	small{
+		font-size: 120%;
+	}
+}
+
+
+/*- optional vanity styles ----------*/
+
+::selection {background: #c80000; color: #fff; text-shadow: #000 0 1px 0;}
+::-moz-selection {background: #c80000; color: #fff; text-shadow: #000 0 1px 0;}
+
+img::selection {background: transparent;}
+img::-moz-selection {background: transparent;}

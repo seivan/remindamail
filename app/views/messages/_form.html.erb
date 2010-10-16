@@ -1,0 +1,14 @@
+<%= simple_form_for @message do |f| %>
+  <%= f.input :from %>
+  <%= f.input :to %>
+  <%= f.input :subject %>
+  <%= f.input :content %>
+  <%= f.input :sending_date, 
+  :as => :date, 
+  :requred => true, 
+  :default => 1.week.from_now, 
+  :start_year => Date.today.year,
+  :start_month => Date.today.month,
+  :start_day => Date.today.day,%>
+<%= f.button :submit %>
+<% end %>

@@ -1,0 +1,194 @@
+/*-  BASE STYLES
+----------------------------------------------------------------------*/
+
+// SASS variables
+$serif: Georgia, Garamond, "Times New Roman", serif;
+$sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$space: 6em;
+
+$accent: #b60000;
+$comp: #158fd5;
+
+
+@font-face {
+	font-family: 'Inconsolata';
+	src: url('../fonts/Inconsolata.eot');
+	src: local('Inconsolata'), url('../fonts/Inconsolata.ttf') format('truetype'), url('../fonts/Inconsolata.svg#webfont') format('svg');
+}
+
+@font-face {
+	font-family: 'Ballpark';
+	src: url('../fonts/ballpark_weiner-webfont.eot');
+	src: local('☺'), url('../fonts/ballpark_weiner-webfont.woff') format('woff'), url('../fonts/ballpark_weiner-webfont.ttf') format('truetype'),
+	url('../fonts/ballpark_weiner-webfont.svg#webfontpducsBcZ') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+/*- fluid images and objects ----------*/
+
+img,
+object,
+embed {max-width: 100%; height: auto !important;}
+
+
+
+
+
+/*- GLOBAL
+----------------------------------------------------------------------*/
+/*
+ This inner element makes centers the page and acts like a wrapper for the fluid elements.
+*/
+
+// Uses division to create the max-width of 620px based on the body font-size, 10px (62.5% of 16px)
+
+.inner{
+	max-width: (620em/(0.625*16)); width: 90%; margin: 0 auto;
+	@include clearfix;
+}
+
+
+body {
+	/* 62.5% = 10px */
+	font: normal 62.5%/1.5 $serif;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: none;
+	color: #000;
+	background-color: #fff;
+	border-top: 3px solid #333;
+	padding-bottom: 100px;
+	
+	&.grid{
+		/* Define path to this tiny .png with the baseline grid. See example in images folder */
+		/* background-image: url(style/images/baseline-grid.png);*/
+	}
+	
+	&.grid .inner{
+		/* Define path to columns.png */
+		background-image: url(../images/grid.png);
+		-webkit-background-clip: content-box;
+		-moz-background-clip: content-box;
+		background-clip: content-box;
+		-webkit-background-origin: content-box;
+		-moz-background-origin: content-box;
+		background-origin: content-box;
+	}
+	
+}
+
+
+/*- LINKS
+----------------------------------------------------------------------*/
+a{
+	position: relative;
+}
+
+a:active{
+	outline: none;
+	top: 1px;
+}
+a:focus{
+	outline: thin dotted;
+}
+
+a em, a time, a strong, a span{
+	cursor: pointer;
+}
+
+
+/* =HEADINGS */
+/*-----------------------------------------*/
+
+h1, h2, h3, h4, h5, h6{
+	font-weight: normal; margin-bottom: 0; line-height: 1.5; text-rendering: optimizeLegibility;
+}
+
+
+/*- ELEMENTS
+----------------------------------------------------------------------*/
+
+p{
+	@include font(1.4em, 1.5);
+}
+
+strong{
+	font-family: $sans;
+}
+
+abbr {
+	cursor: help;
+}
+
+label{
+	font-weight: bold;
+}
+
+time[title]{
+	font-weight: bolder;
+}
+
+pre, code{
+	font-size: 1em;
+	font-family: Inconsolata, Monaco, "Courier New", Courier, monospace;
+}
+pre code{
+	font-size: 1.1em;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+del{
+	color: #999; border: 0;
+}
+
+hr{
+	background-color: #eee;
+}
+
+.negative{
+	color: #b30000;
+}
+.positive{
+	color: green;
+}
+
+/**
+* Button styles
+*/
+@mixin button($basecolor: #fff, $hover: false){
+		-moz-border-radius: 1em; -webkit-border-radius: 1em; border-radius: 1em;
+		background: $basecolor -moz-linear-gradient(center top, transparent 0%, rgba(0,0,0, 0.2) 100%);
+		background: $basecolor -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0,0,0, 0.2)) );
+		border:1px solid rgba(0, 0, 0, 0.3);
+		color: darken($basecolor, 70%);
+		font-weight: 500;
+		padding: 0 1em;
+		@include font(1em, 1.667em);
+		text-shadow: 0 1px 1px #fff;
+		text-transform: lowercase;
+		display: inline-block;
+		@include transition(background-color 0.15s ease-out);
+		-webkit-box-shadow: #fff 0 1px 0, inset rgba(255,255,255, 0.7) 0 1px 1px;
+		-moz-box-shadow: #fff 0 1px 0, inset rgba(255,255,255, 0.7) 0 1px 1px;
+		box-shadow: #fff 0 1px 0, inset rgba(255,255,255, 0.7) 0 1px 1px;
+		
+	@if($hover == true){
+		&:hover{
+			border-color: rgba(0,0,0, 0.3); color: darken($basecolor, 70%);
+			background-color: lighten($basecolor, 3%);
+		}
+	}
+	&:active, &.current{
+		top: auto; outline: none !important;
+		background-color: darken($basecolor, 8%);
+		@include box-shadow(inset rgba(0,0,0, 0.6) 0 0 3px);
+		@include transition(none);
+	}
+}
+
+.button, button, input[type=submit]{
+	@include button;
+}

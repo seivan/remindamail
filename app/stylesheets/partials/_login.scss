@@ -1,0 +1,99 @@
+body.login{
+	
+	header[role="banner"]{
+		margin-bottom: 4em;
+		
+		h1{
+			float: none;
+			width: 100%;
+			text-align: center;
+			font-size: 6em;
+		}
+	}
+	
+	section[role="main"]{
+		& > section.floated{
+			float: left;
+			@include column(300);
+			
+			&:first-child{
+				margin-right: 2em;
+			}
+			
+			p{
+				font-size: 1.3em;
+				line-height: 1.667em;
+			}
+			
+			#login-list{
+				list-style: none;
+				
+				li{
+					margin-bottom: 10px;
+					
+					a{
+						font-size: 2em;
+						display: block;
+						color: #333;
+						padding: 5px;
+						@include border-radius(10px);
+						background-color: #eee;
+						border: 1px solid #ddd;
+						
+						img{
+							display: inline;
+							vertical-align: middle;
+							margin-right: 20px;
+							@include transition(all 0.2s ease-out);
+						}
+						
+						&:hover{
+							
+							img{
+								-webkit-transform: scale(1.15);
+								-moz-transform: scale(1.15);
+								transform: scale(1.15);
+							}
+						}
+						
+						&#facebook:hover{
+							color: #476aa5;
+						}
+						&#twitter:hover{
+							color: #3290c0;
+						}
+					}
+				}
+			}
+		}
+		
+		section#reviews{
+			margin-top: 2em;
+			float: right;
+			@include column(460);
+			@include clearfix;
+			
+			p{
+				font-style: italic;
+				color: #555;
+				float: left;
+				width: 47%;
+				font-size: 1.2em;
+				
+				&#first{
+					margin-right: 20px;
+				}
+				
+				cite{
+					font: normal bold 1em/1 $sans;
+					color: #333;
+					display: block;
+					border-top: 1px solid #ddd;
+					margin-top: 5px;
+					padding-top: 5px;
+				}
+			}
+		}
+	}
+	
+}

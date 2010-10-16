@@ -1,0 +1,16 @@
+
+#new-mail{
+	width: 75%;
+	padding-top: 2em;
+	margin: 0 auto;
+	position: relative;
+	@include clearfix;
+
+	input, textarea, select{
+		margin-bottom: 2em;
+	}
+	
+	input[type="submit"]{
+		float: right;
+	}
+}

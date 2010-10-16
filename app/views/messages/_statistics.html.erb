@@ -1,0 +1,9 @@
+<h1>There are 
+  <a href="index.html">
+    <%=pluralize(current_user.messages.count, "mail")%>
+  </a> 
+  in your queue. Next one will be sent in 
+  <a href="view.html">
+    <%=next_mail%>
+  </a>
+</h1>
