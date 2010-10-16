@@ -1,4 +1,15 @@
 Remindamail::Application.routes.draw do
+  get "messages/index"
+
+  get "messages/new"
+
+  get "messages/create"
+
+  match '/auth/:provider/callback', :to => 'sessions#create'
+  match '/auth/failure', :to => 'sessions#create'
+  resources :sessions, :only => [:new, :create, :destroy, :update]
+  resources :messages, :except => [:destroy, :edit, :update] 
+  root :to => "sessions#new"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
