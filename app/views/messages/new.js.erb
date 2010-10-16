@@ -1,1 +1,27 @@
 $("body").append("<%= escape_javascript(render :partial => 'form')%>")
+$("section.modal").each(function(index){
+$("section.modal").lightbox_me({
+        overlayCSS: {"background": "black", "opacity": "0.3"},
+        modalCSS: {"top": "100px"},
+        centered: true,
+        destroyOnClose : true,
+        onLoad: function(){
+          $("input#from").focus();
+        }
+
+      });
+    });
+// $("section.modal").live("click", function({ 
+//   
+//   $("section.modal").lightbox_me({
+//         overlayCSS: {"background": "black", "opacity": "0.3"},
+//         modalCSS: {"top": "100px"},
+//         centered: true,
+//         onLoad: function(){
+//           $("input#from").focus();
+//         }
+//       });
+//     });
+//   
+// $("section.modal").trigger("click")
+// 

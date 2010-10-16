@@ -22,8 +22,7 @@
 	
   <%= stylesheet_link_tag 'compiled/master.css', :media => 'screen, projection'%>
   <!-- jQuery -->
-  <%= javascript_include_tag "jquery.min.js"%> 
-  <%= javascript_include_tag :all, :cache => true %>
+  <%= javascript_include_tag "jquery.min.js", "rails", "jquery.lightbox_me", "delaymail", :cache => true %>
   <%= csrf_meta_tag %>
   	<!-- These are IE-specific conditional style sheets. 
 		 You might consider removing the ones you don't end up using. -->

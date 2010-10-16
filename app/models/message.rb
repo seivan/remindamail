@@ -2,7 +2,7 @@ class Message < ActiveRecord::Base
   belongs_to :user
   # scope :next_mail, lambda { |user_id| 
   #     where(:user_id => user_id, :status => false).
-  #     order("sending_date ASC").
+  #     order("arrived_at ASC").
   #     limit(1).first
   #     }
   def self.per_page
@@ -14,7 +14,7 @@ class Message < ActiveRecord::Base
   def self.next_mail(user_id)
     Message.
     where(:user_id => User.first, :status => false).
-    order("sending_date DESC").
+    order("arrived_at DESC").
     limit(1).
     first
   end
