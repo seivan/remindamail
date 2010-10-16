@@ -1,12 +1,20 @@
 <section class="modal">
   <a class="close">×</a>
   <%= simple_form_for @message do |f| %>
-    <%= f.input :from, :class => "float" %>
-    <%= f.input :to, {:class => "float" }%>
+    <div class="floats">
+      <%= f.label :from%>
+      <%= f.text_field :from%>
+    </div>
+    <span class="arrow">➤</span>    
+    <div class="floats">    
+      <%= f.label :to%>
+      <%= f.text_field :to%>
+    </div>    
+<br class="clear"/>
     <%= f.input :subject %>
     <%= f.input :content %>
     <%= f.input :arrived_at, 
-      :as => :date, 
+      :as => :string, 
       :requred => true, 
       :default => 1.week.from_now, 
       :start_year => Date.today.year%>
