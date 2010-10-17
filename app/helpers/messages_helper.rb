@@ -5,5 +5,4 @@ module MessagesHelper
     date ? time_ago_in_words(date) : "when you write one!"
   end
   
-  
 end

@@ -44,6 +44,11 @@
 			font-family: $monospace;
 			font-size: 0.8em;
 			
+			&#all-mails-count{
+				border-top: 1px solid green;
+				padding-top: 3px;
+			}
+			
 			strong{
 				position: absolute;
 				right: 0;
