@@ -12,7 +12,7 @@
 
 		<section>
 			<div id="toggle-view">
-				<%=link_to "Not Sent", messages_path(:sent => false), {:class => "current"}%>
+				<%=link_to "Not Sent", messages_path(:sent => false)%>
         		<%=link_to "Sent", messages_path(:sent => true)%>
 			</div>
 					
@@ -22,17 +22,20 @@
 				<h2>Queue</h2>
 			<%end%>
 			
+			<% if(@messages.length)%>
 			<table class="list">
 				<thead>
 					<tr><td>Subject</td><td>Arrives on</td><td>Created</td></tr>
 				</thead>
 							
 				<tbody>
-				  <%=render @messages%>
+				  <%=render @messages %>
 				</tbody>
 			
 			</table>
 			<%= will_paginate @messages %>
+			
+			<% end %>
 		</section>
 		
 		<%= render :partial => "sidebar" %>

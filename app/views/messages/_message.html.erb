@@ -1,12 +1,12 @@
 <tr>
   <td><a href="view.html"><%=message.subject%></a></td>
   <td>
-    <time datetime="<%=message.arrived_at.strftime("%y-%m-%d")%>">
+    <time datetime=<%=message.arrived_at.strftime("%y %m %d")%>>
       <%=message.arrived_at.strftime("%a, %d %b %Y")%>
     </time>
   </td>
   <td>
-    <time datetime="<%=message.created_at.strftime("%y-%m-%d")%>">
+    <time datetime=<%=message.created_at.strftime("%y %m %d")%>>
       <%=message.created_at.strftime("%a, %d %b %Y")%>
     </time>
   </td>
