@@ -7,7 +7,7 @@ $sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 $space: 6em;
 
-$accent: #b60000;
+$accent: #2a85b4;
 $comp: #158fd5;
 
 
@@ -47,7 +47,7 @@ embed {max-width: 100%; height: auto !important;}
 // Uses division to create the max-width of 620px based on the body font-size, 10px (62.5% of 16px)
 
 .inner{
-	max-width: (620em/(0.625*16)); width: 90%; margin: 0 auto;
+	max-width: (780em/(0.625*16)); width: 90%; margin: 0 auto;
 	@include clearfix;
 }
 
@@ -58,7 +58,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-size-adjust: none;
 	color: #000;
-	background-color: #fff;
+	background: #fff url(/images/body.png) repeat-x left top;
 	border-top: 3px solid #333;
 	padding-bottom: 100px;
 	
@@ -69,7 +69,7 @@ body {
 	
 	&.grid .inner{
 		/* Define path to columns.png */
-		background-image: url(../images/grid.png);
+		background-image: url(/images/grid.png);
 		-webkit-background-clip: content-box;
 		-moz-background-clip: content-box;
 		background-clip: content-box;
@@ -159,21 +159,21 @@ hr{
 * Button styles
 */
 @mixin button($basecolor: #fff, $hover: false){
-		-moz-border-radius: 1em; -webkit-border-radius: 1em; border-radius: 1em;
+		@include border-radius(0.5em);
 		background: $basecolor -moz-linear-gradient(center top, transparent 0%, rgba(0,0,0, 0.2) 100%);
 		background: $basecolor -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0,0,0, 0.2)) );
 		border:1px solid rgba(0, 0, 0, 0.3);
-		color: darken($basecolor, 70%);
-		font-weight: 500;
+		color: #333;
+		font-weight: bold;
 		padding: 0 1em;
 		@include font(1em, 1.667em);
-		text-shadow: 0 1px 1px #fff;
-		text-transform: lowercase;
+		text-shadow: #fff 0 1px 0;
 		display: inline-block;
 		@include transition(background-color 0.15s ease-out);
-		-webkit-box-shadow: #fff 0 1px 0, inset rgba(255,255,255, 0.7) 0 1px 1px;
-		-moz-box-shadow: #fff 0 1px 0, inset rgba(255,255,255, 0.7) 0 1px 1px;
-		box-shadow: #fff 0 1px 0, inset rgba(255,255,255, 0.7) 0 1px 1px;
+		@include box-shadow(#fff 0 1px 0);
+		text-decoration: none;
+		cursor: pointer;
+		white-space: nowrap;
 		
 	@if($hover == true){
 		&:hover{

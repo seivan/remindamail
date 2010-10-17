@@ -1,0 +1,14 @@
+.sidebar{
+	
+	float: right;
+	@include column(220);
+	
+	ul{
+		list-style: none;
+		font-size: 1.3em;
+		
+		li{
+			font-family: "American Typewriter", Monaco, Georgia, "Times New Roman", Times, serif;
+		}
+	}
+}

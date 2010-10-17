@@ -22,11 +22,11 @@ class MessagesController < ApplicationController
     @message = Message.new(params[:message])
     @message.user = current_user
     if @message.save
-      flash[:success] = "Email is successfully queued and will be sent on #{@message.arrived_at}"
+      flash[:success] = "Mail is successfully queued and will be sent on #{@message.arrived_at}"
         #Add to mail queue
       redirect_to messages_path
     else
-        flash[:failure] = "Email was not queued, please fix the errors"
+        flash[:failure] = "Mail was not queued, please fix the errors"
         render :action => "new"
     end
   end

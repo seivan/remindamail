@@ -6,12 +6,17 @@ $("section.modal").lightbox_me({
         centered: true,
         destroyOnClose : true,
         onLoad: function(){
-          $("input#from").focus();
+          $("input#message_from").focus();
         }
 
-      });
-    });
-$("#message_arrived_at").datepicker("option","dateFormat","yy-mm-dd");
+	});	
+});
+
+$("#message_arrived_at").
+	datepicker({dateFormat: "yy-mm-dd", minDate: new Date()}).
+	blur(function(){
+		
+	});
 
 // $("section.modal").live("click", function({ 
 //   

@@ -12,55 +12,68 @@ body.login{
 	}
 	
 	section[role="main"]{
-		& > section.floated{
-			float: left;
-			@include column(300);
-			
-			&:first-child{
-				margin-right: 2em;
-			}
-			
-			p{
-				font-size: 1.3em;
-				line-height: 1.667em;
-			}
-			
-			#login-list{
-				list-style: none;
+		
+		#hero{
+			margin-bottom: 2em;
+		}
+		
+		#container{
+			@include clearfix;
+			margin-bottom: 2em;
+	
+			section.floated{
+				float: left;
+				@include column(380);
 				
-				li{
-					margin-bottom: 10px;
+				&:first-child{
+					padding-right: 2em;
+				}
+				
+				p{
+					font-size: 1.3em;
+					line-height: 1.667em;
+				}
+				
+				#login-list{
+					list-style: none;
 					
-					a{
-						font-size: 2em;
-						display: block;
-						color: #333;
-						padding: 5px;
-						@include border-radius(10px);
-						background-color: #eee;
-						border: 1px solid #ddd;
+					li{
+						margin-bottom: 10px;
 						
-						img{
-							display: inline;
-							vertical-align: middle;
-							margin-right: 20px;
-							@include transition(all 0.2s ease-out);
-						}
-						
-						&:hover{
+						a{
+							font-size: 2em;
+							display: block;
+							color: #333;
+							padding: 5px;
+							@include border-radius(10px);
+							background-color: #eee;
+							border: 1px solid #ddd;
+							text-decoration: none;
 							
 							img{
-								-webkit-transform: scale(1.15);
-								-moz-transform: scale(1.15);
-								transform: scale(1.15);
+								display: inline;
+								vertical-align: middle;
+								margin-right: 20px;
+								@include transition(all 0.2s ease-out);
 							}
-						}
-						
-						&#facebook:hover{
-							color: #476aa5;
-						}
-						&#twitter:hover{
-							color: #3290c0;
+							
+							&:hover{
+							
+								background-color: #f1f1f1;
+								
+								img{
+									-webkit-transform: scale(1.15);
+									-moz-transform: scale(1.15);
+									transform: scale(1.15);
+								}
+							}
+							
+							&#facebook:hover{
+								color: #476aa5;
+							}
+							&#twitter:hover{
+								color: #3290c0;
+							}
 						}
 					}
 				}
@@ -68,9 +81,6 @@ body.login{
 		}
 		
 		section#reviews{
-			margin-top: 2em;
-			float: right;
-			@include column(460);
 			@include clearfix;
 			
 			p{
@@ -88,7 +98,6 @@ body.login{
 					font: normal bold 1em/1 $sans;
 					color: #333;
 					display: block;
-					border-top: 1px solid #ddd;
 					margin-top: 5px;
 					padding-top: 5px;
 				}

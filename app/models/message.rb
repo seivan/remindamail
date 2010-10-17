@@ -13,12 +13,16 @@ class Message < ActiveRecord::Base
   
   def self.next_mail(user_id)
     Message.
-    where(:user_id => User.first, :status => false).
+    where(:user_id => user_id, :status => false).
     order("arrived_at DESC").
     limit(1).
     first
   end
   
-
+  def self.queued_mails(user_id)
+    Message.
+      #where(:user_id => user_id, :status => true)
+      find(:all).length
+  end
   
 end

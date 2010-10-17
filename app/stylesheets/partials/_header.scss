@@ -15,23 +15,34 @@ header[role="banner"]{
 			color: #363636;
 			text-decoration: none;
 			font-weight: normal;
+			
+			&:hover{
+				color: #000;
+			}
 		}
 	}
 	
 	nav{
-		position: absolute;
-		bottom: ($space / 2);
-		right: 0;
+		float: right;
+		top: 1em;
 		@include column(220);
 		
-		a#new-mail-button{
-			@include button(lighten($comp, 10%));
+		#user{
+			background: transparent url(/images/user.png) no-repeat left top;
+			font: bold 1.4em/1 $sans;
+			color: #333;
+			padding-left: 25px;
+		}
+		
+		#new-mail-button{
+			@include button(#63b834);
+			font-size: 1.4em;
 			color: #fff;
-			text-shadow: rgba(0,0,0, 0.6) 0 1px 0;
+			text-shadow: rgba(0,0,0, 0.6) 0 1px 1px;
 			position: absolute;
+			text-transform: none;
 			right: 0;
 			top: -0.3em;
-			@include box-shadow($comp 0 1px 4px);
 			
 			&:active{
 				top: -0.3em;
@@ -41,14 +52,20 @@ header[role="banner"]{
 		ul{
 			@include clearfix;
 			position: absolute;
-			bottom: -2.3em;
+			bottom: -2.5em;
 			right: 0;
 			width: 100%;
 			
 			li{
 				float: left;
-				margin-right: 15%;
+				text-align: center;
+				width: 60px;
+				margin-right: 19px;
 				font-size: 1.2em;
+				
+				&:last-child{
+					margin-right: 0;
+				}
 			}
 		}
 	}

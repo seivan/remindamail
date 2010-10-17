@@ -6,17 +6,25 @@ section.modal{
 	@include box-shadow(rgba(0,0,0, 0.5) 0 3px 10px);
 	@include border-radius(0.3em);
 	
-	h2{
-		background-color: #ddd;
-		@include gradient(lighten($comp, 30%), $comp);
+	
+	header{
+		@include gradient(#363636, #101010);
 		border-bottom: 1px solid darken($comp, 20%);
-		border-top: 1px solid rgba(255,255,255, 0.7);
+		border-top: 1px solid rgba(255,255,255, 0.6);
 		margin: -20px -20px 0 -20px;
-		padding: 20px 20px 10px;
-		line-height: 1;
-		color: #fff;
-		text-shadow: #000 0 -1px 0;
+		padding: 15px 20px 10px;
+		@include border-radius(3px);
+		
+		h2{
+			border: 0;
+			line-height: 1;
+			color: #fff;
+			text-shadow: #000 0 1px 0;
+			margin: 0;
+			text-align: center;
+		}
 	}
+
 	
 	.close{
 		color: #fff;
@@ -31,6 +39,13 @@ section.modal{
 		border: 3px solid #fff;
 		@include border-radius(1em);
 		@include box-shadow(rgba(0,0,0, 0.6) -1px 1px 3px);
+		text-decoration: none;
+		
+		&:active{
+			border-color: #ddd;
+			top: -4px;
+			color: #ddd;
+		}
 	}
 	
 	.arrow{
@@ -38,8 +53,7 @@ section.modal{
 		float: left;
 		display: inline-block;
 		padding: 0 0.6em;
-		color: $comp;
-		text-shadow: #000 0 1px 0;
+		color: #101010;
 		position: relative;
 		top: 20px;
 	}
