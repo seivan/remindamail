@@ -9,37 +9,24 @@
   <%= render :partial => "navigation" %>
 <%end%>
 
-<<<<<<< HEAD
 <h1>
   <%= render :partial => "statistics" %>
 </h1>
+<<<<<<< HEAD
+
+=======
+>>>>>>> johan
+
 		<section>
 			<div id="toggle-view">
         <%=render :partial => "tabs"%>
-=======
-<div class="flash flash_failure">
-	<p>Ett failure!</p>
-</div>
-<div class="flash flash_success">
-	<p>Ett failure!</p>
-</div>
-
-		<section>
-			<div id="toggle-view">
-				<%=link_to "Not Sent", messages_path(:sent => false), :class => "inactive"%>
-        		<%=link_to "Sent", messages_path(:sent => true)%>
->>>>>>> johan
 			</div>
 			
-      		<section id="index">
-        		<%=render :partial => "index_messages", :locals => {:current_user => current_user, :messages => @messages}%>
-        	</section>
+      <section id="index">
+        <%=render :partial => "index_messages", :locals => {:current_user => current_user, :messages => @messages}%>
+        </section>
 		</section>
-<<<<<<< HEAD
 	<aside class="sidebar">
-=======
-
->>>>>>> johan
 		<%= render :partial => "sidebar" %>
 	</aside>
   </header>		

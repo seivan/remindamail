@@ -170,6 +170,11 @@ div.pagination{
 	a{
 		text-decoration: none;
 		color: #333;
+		display: inline-block;
+		line-height: 1;
+		border: 1px solid #ccc;
+		background-color: #fff;
+		padding: 0.3em 0.5em;
 		
 		&:hover{
 			color: $accent;
@@ -179,13 +184,7 @@ div.pagination{
 		margin: 0 1em;
 	}
 	
-	a[rel]{
-		display: inline-block;
-		line-height: 1;
-		border: 1px solid #ccc;
-		background-color: #fff;
-		padding: 0.3em 0.5em;
-		
+	a[rel]{		
 		&.next_page{
 			border-left: 0;
 		}
