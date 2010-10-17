@@ -15,41 +15,59 @@ header[role="banner"]{
 			color: #363636;
 			text-decoration: none;
 			font-weight: normal;
+			
+			&:hover{
+				color: #000;
+			}
 		}
 	}
 	
 	nav{
-		position: absolute;
-		bottom: ($space / 2);
-		right: 0;
-		@include column(220);
+		float: right;
+//		@include column(220);
+		@include clearfix;
 		
-		a#new-mail-button{
-			@include button(lighten($comp, 10%));
+		#user{
+			background: transparent url(/images/user.png) no-repeat left top;
+			font: bold 1.4em/1 $sans;
+			color: #333;
+			padding-left: 25px;
+			float: right;
+			margin-bottom: 1em;
+		}
+		
+		#new-mail-button{
+			@include button(#63b834);
+			font-size: 1.4em;
 			color: #fff;
-			text-shadow: rgba(0,0,0, 0.6) 0 1px 0;
-			position: absolute;
-			right: 0;
-			top: -0.3em;
-			@include box-shadow($comp 0 1px 4px);
+			text-shadow: rgba(0,0,0, 0.6) 0 1px 1px;
+			float: right;
+			clear: both;
 			
 			&:active{
-				top: -0.3em;
+				top: auto;
 			}
 		}
 		
 		ul{
 			@include clearfix;
-			position: absolute;
-			bottom: -2.3em;
-			right: 0;
-			width: 100%;
+			float: left;
+			top: 0.4em;
+			margin-right: 1em;
 			
 			li{
 				float: left;
-				margin-right: 15%;
+				text-align: center;
+				width: 60px;
+				margin-right: 19px;
 				font-size: 1.2em;
+				
+				&:last-child{
+					margin-right: 0;
+				}
+				
 			}
+			
 		}
 	}
 }

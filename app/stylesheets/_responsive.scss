@@ -1,7 +1,7 @@
 /*-  STYLES FOR A RESPONSIVE DESIGN
 ----------------------------------------------------------------------*/
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 1024px){
 	body.login{
 		
 		header[role="banner"]{
@@ -9,18 +9,29 @@
 				font-size: 4.8em;
 			}
 		}
+	}
 	
-		section[role="main"]{
-			section{
-				float: none !important;
-				width: 100% !important;
-				
-				&:first-child{
-					margin-bottom: 2em;
-				}
-			}
+	section[role="main"]{
+		
+	}
+
+	
+	.sidebar, section, nav{
+		float: none !important;
+		width: 100% !important;
+		margin-bottom: 2em;
+	}	
+	
+	header[role="banner"]{
+		height: auto;
+		padding-top: 2em;
+		
+		nav a#new-mail-button{
+			font-size: 1.8em;
 		}
 	}
+
+	
 }
 
 
@@ -30,6 +41,20 @@
 	
 	table.list time{
 		font-size: 0.85em;
+	}
+	
+	header[role="banner"]{
+		h1{
+			text-align: center;
+		}
+		
+		nav{			
+			ul li{
+				width: 60px;
+				margin-right: 0;
+				text-align: center;
+			}
+		}
 	}
 	
 }

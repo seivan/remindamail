@@ -1,0 +1,119 @@
+	@-webkit-keyframes terminal{
+		0%	{background-position: left top;}
+		100%{background-position: left bottom;}
+	}
+
+
+.home section[role="main"]{
+	
+	& > section{
+		float: left;
+		@include column(540);
+	}
+
+
+	
+	.sidebar{
+		$monospace: Monaco, Inconsolata, "Courier New", monospace;
+		background: #000 url(/images/terminal.png);
+		@include border-radius(0.5em);
+		color: lighten(green, 20%);
+		padding: 20px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		-webkit-animation-name: terminal;
+		-webkit-animation-duration: 8s;
+		-webkit-animation-timing-function: linear;
+		-webkit-animation-iteration-count: infinite;
+		
+		&:hover{
+			-webkit-animation-name: none;
+		}
+		
+		
+		h2{
+			color: lighten(green, 20%);
+			font-family: $monospace;
+			font-size: 1em;
+		}
+	
+		li{
+			display: block;
+			margin-bottom: 0.5em;
+			font-family: $monospace;
+			font-size: 0.8em;
+			
+			&#all-mails-count{
+				border-top: 1px solid green;
+				padding-top: 3px;
+			}
+			
+			strong{
+				position: absolute;
+				right: 0;
+			}
+		}
+	}
+	
+		
+	/* =TABLE */
+	/*-----------------------------------------*/
+	
+	#toggle-view{
+		@include clearfix;
+		border-bottom: 1px solid #ddd;
+		margin-bottom: 2em;
+		
+		a{
+			display: block;
+			font-size: 2em;
+			text-align: center;
+			float: left;
+			width: 50%;
+			
+			&.current{
+				background-color: #eee;
+			}
+		}
+	}
+	
+	table.list{
+		width: 100%;
+		font: 1.4em/1 $serif;
+		
+		thead tr{
+			font-style: italic;
+			height: 20px;
+			color: #555;
+		}
+		
+		td{
+			@include column(160);
+		}
+		
+		tbody tr > td:first-child{
+			@include column(320);
+		}
+		tbody{
+			tr{
+				height: 40px;
+				border-bottom: 1px solid #eee;
+				
+				td{
+					vertical-align: middle;
+					
+					a{
+						display: block;
+						max-width: 90%;
+						white-space: nowrap;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						height: 1.2em;
+					}
+				}
+			}
+		}
+	}	
+	
+}

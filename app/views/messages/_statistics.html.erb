@@ -1,9 +1,7 @@
 <h1>There are 
-  <a href="index.html">
-    <%=pluralize(current_user.messages.count, "mail")%>
-  </a> 
+	<%= link_to pluralize(Message.queued_mails_count(current_user), "mail"), messages_path(:sent => true), :id => "mail-amount" %>
   in your queue. Next one will be sent in 
-  <a href="view.html">
+  <a href="view.html" id="next-mail">
     <%=next_mail%>
   </a>
 </h1>

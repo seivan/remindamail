@@ -97,7 +97,7 @@
 }
 
 // Instead of calculating the percentages, just include "column(width)".
-@mixin column($width, $property: width, $tot: 620){
+@mixin column($width, $property: width, $tot: 780){
 	#{$property}: ($width/$tot)*100%;
 }
 

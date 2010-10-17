@@ -7,8 +7,8 @@
 /*	=MAIN
 	------------------------------------------------------ */
 	
-.static{
-	border-bottom: 1px dotted #aaa;
+section[role="main"]{
+	@include clearfix;
 }
 
 /*	=LINKS
@@ -24,25 +24,46 @@ a{
 
 a:hover{
 	color: #000;
+	text-decoration: underline;
 }
 
 a.current{	
 	color: #363636;
 	cursor: default;
+	text-decoration: none;
 }
 	
 
 /*	=HEADINGS
 	------------------------------------------------------ */
 	
-h1{
+section[role="main"] h1{
 	font-size: 2em;
+	text-align: center;
+	line-height: 1.667;
+	margin-bottom: 1em;
+	padding: 1em 0 1.5em;
+	border-bottom: 1px solid #eee;
+	
+	#mail-amount, #next-mail{
+		background: transparent url(/images/mail-icons.png) no-repeat left -17px;
+		display: inline-block;
+		padding-left: 22px;
+	}
+	#next-mail{
+		background-position: left 7px;
+	}
+	
+	a:hover{
+		text-decoration: none;
+	}
 }
 
 h2{
 	font: bold 1.8em/1.333 $sans;
-	color: #000;
+	color: #555;
 	margin-bottom: 1.1111em;
+
 }
 
 h3{
@@ -56,13 +77,6 @@ h3{
 	------------------------------------------------------ */
 	
 @import "partials/header";
-
-
-
-/* =CONTENT */
-/*-----------------------------------------*/
-
-@import "partials/content";
 
 
 
@@ -83,36 +97,7 @@ h3{
 /* =FRONTPAGE */
 /*-----------------------------------------*/
 
-
-.home section[role="main"]{
-
-	
-	#toggle-view{
-		margin: 0 auto;
-		width: 150px;
-		
-		a{
-			@include button;
-			font-size: 1.2em;
-			
-			&#left{
-				-webkit-border-top-right-radius: 0;
-				-webkit-border-bottom-right-radius: 0;
-				-moz-border-radius-topright: 0;
-				-moz-border-radius-bottomright: 0;
-			}
-			&#right{
-				-webkit-border-top-left-radius: 0;
-				-webkit-border-bottom-left-radius: 0;
-				-moz-border-radius-topleft: 0;
-				-moz-border-radius-bottomleft: 0;
-				border-left-color: #eee;
-			}
-		}
-
-	}
-	
-}
+@import "partials/frontpage";
 
 
 /* =VIEW MAIL */
@@ -120,17 +105,26 @@ h3{
 
 .view{
 
-	h3{
+	aside{
 		float: left;
-	}
+		
+		ul{
+			list-style: none;
+			
+			li{
+				font-size: 1.3em;
+				margin-bottom: 5px;
+			}
+		}
 	
-	h3 strong{
-		font-size: 0.9em;
-		font-style: normal;
+		strong{
+			font-size: 0.9em;
+			font-style: normal;
+		}
 	}
 	
 	.message-text{
-		@include column(380);
+		@include column(460);
 		float: right;
 	
 		p{
@@ -145,6 +139,13 @@ h3{
 /*-----------------------------------------*/
 
 @import "partials/login";
+
+
+
+/* =SIDEBAR */
+/*-----------------------------------------*/
+
+@import "partials/sidebar";
 
 
 
@@ -235,7 +236,6 @@ footer[role="contentinfo"]{
 	@include row;
 	margin-top: 2em;
 	padding-top: 2em;
-	border-top: 3px solid #333;
 	
 	small{
 		font-size: 120%;
@@ -245,8 +245,6 @@ footer[role="contentinfo"]{
 
 /*- optional vanity styles ----------*/
 
-::selection {background: #c80000; color: #fff; text-shadow: #000 0 1px 0;}
-::-moz-selection {background: #c80000; color: #fff; text-shadow: #000 0 1px 0;}
 
 img::selection {background: transparent;}
 img::-moz-selection {background: transparent;}

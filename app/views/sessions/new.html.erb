@@ -1,8 +1,40 @@
-<a href="/auth/twitter" class="auth_provider">
-  <%= image_tag "twitter_64.png", :size => "64x64", :alt => "Twitter" %>
-  Twitter
-</a>
-<a href="/auth/facebook" class="auth_provider">
-  <%= image_tag "facebook_64.png", :size => "64x64", :alt => "Facebook" %>
-  Facebook
-</a>
+<% @body_class = "login"%>
+
+<%= image_tag "hero.png", :alt => "Remind-a-Mail", :id => "hero" %>
+	
+	<section id="login-list">
+		<h2>Choose your login method</h2>
+	
+		<ul>
+			<li>
+				<a href="/auth/twitter" id="twitter" class="auth_provider">
+				  <%= image_tag "twitter_32.png", :alt => "Twitter" %>
+				  Login with Twitter ›
+				</a>
+			</li>
+			<li>
+				<a href="/auth/facebook" id="facebook" class="auth_provider">
+				  <%= image_tag "facebook_32.png", :alt => "Facebook" %>
+				  Login with Facebook ›
+				</a>
+			</li>
+		</ul>
+	
+	</section>
+
+	<section id="what">
+		<h2>What is this?</h2>
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam sit amet elit vitae arcu interdum ullamcorper. Nullam ultrices, nisi quis scelerisque convallis, augue neque tempor enim, et mattis justo nibh eu elit. Quisque ultrices gravida pede. Mauris accumsan vulputate tellus. Phasellus condimentum bibendum dolor. Mauris sed ipsum.</p>
+
+	</section>
+
+<section id="reviews">
+	<h2>Appraisals</h2>
+		<p id="first">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam sit amet elit vitae arcu interdum ullamcorper. Nullam ultrices, nisi quis scelerisque convallis, augue neque tempor enim, et mattis justo nibh eu elit.
+		<cite>Johan</cite>
+		</p>
+		
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam sit amet elit vitae arcu interdum ullamcorper. Nullam ultrices, nisi quis scelerisque convallis, augue neque tempor enim, et mattis justo nibh eu elit.
+		<cite>Johan</cite>
+	</p>
+</section>

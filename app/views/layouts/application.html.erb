@@ -2,44 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Remind-à-mail</title>
-  	<meta name="description" content="Here is the description of your project." />
-	<!-- Google will often use this as its description of your page/site. Make it good. -->
-	<meta name="author" content="Your Name Here" />
-	<meta name="Copyright" content="Copyright Your Name Here 2010. All Rights Reserved." />
-	<meta name="DC.title" content="Project Name" />
-	<meta name="DC.subject" content="What you're about." />
-	<meta name="DC.creator" content="Who made this site." />
-	<meta name="google-site-verification" content="" />
-	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
-	<link rel="shortcut icon" href="images/favicon.png"/>
-	<!-- This is the traditional favicon.
-		 - size: 16x16 or 32x32
-		 - transparency is OK
-		 - see wikipedia for info on broswer support: http://mky.be/favicon/ -->
+  <title>Remind-a-mail</title>
+  	<meta name="description" content="Ever wanted to e-mail your future self that important information? Now you can." />
+	<meta name="author" content="Seivan and Johan" />
+	<meta name="Copyright" content="Seivan and Johan 2010" />
+	<meta name="DC.title" content="Remind-a-Mail" />
+	<meta name="DC.subject" content="Ever wanted to e-mail your future self that important information? Now you can." />
+	<meta name="DC.creator" content="Seivan and Johan" />
 	
-  <!-- <link rel="apple-touch-icon" href="images/custom_icon.png"/> -->
+	<link rel="shortcut icon" href="/favicon.png"/>
+	<link rel="apple-touch-icon-precomposed" href="/images/iOS-icon.png"/>
 	
   <%= stylesheet_link_tag 'compiled/master.css', :media => 'screen, projection'%>
   <!-- jQuery -->
   <%= javascript_include_tag "jquery.min.js", "rails", "jquery.lightbox_me", "application", :cache => true %>
   <%= csrf_meta_tag %>
   <%= yield :head %>
-  	<!-- These are IE-specific conditional style sheets. 
-		 You might consider removing the ones you don't end up using. -->
 </head>
-<body id="www-domain-com" class="home">
+<body id="www-domain-com" class="<%= @body_class %>">
 
 	<div class="inner">
 
 	<header role="banner">
 		
-		<h1><a href="/">Remind-à-Mail</a></h1>
+		<h1><a href="/">Remind-a-Mail</a></h1>
     <%= yield :header %>
   </header>
+
   <section role="main">
     <%= yield %>
   </section>
+
   <footer role="contentinfo">
 		<small>Created by Seivan & Johan 2010</small>
 	</footer>

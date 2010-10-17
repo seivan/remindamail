@@ -1,15 +1,20 @@
 $("body").append("<%= escape_javascript(render :partial => 'form')%>")
-$("section.modal").each(function(index){
-$("section.modal").lightbox_me({
+$("section.modal#new-mail").each(function(index){
+$("section.modal#new-mail").lightbox_me({
         overlayCSS: {"background": "black", "opacity": "0.3"},
         modalCSS: {"top": "100px"},
         centered: true,
         destroyOnClose : true,
         onLoad: function(){
-          $("input#from").focus();
+          $("input#message_from").focus();
         }
 
-      });
-    });
-$("#message_arrived_at").datepicker("option","dateFormat","yy-mm-dd");
+	});	
+});
+
+$("#message_arrived_at").
+	datepicker({dateFormat: "yy-mm-dd", minDate: new Date()}).
+	blur(function(){
+		
+	});
 

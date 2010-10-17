@@ -1,6 +1,10 @@
-<section class="modal">
-  <a class="close">×</a>
-  <%= simple_form_for(@message) do |f| %>
+<section class="modal" id="new-mail">
+	<header>
+		<a class="close">×</a>
+		<h2>New mail</h2>
+	</header>
+  
+  <%= simple_form_for @message do |f| %>
     <div class="floats">
       <%= f.label :from%>
       <%= f.text_field :from%>
@@ -16,8 +20,9 @@
     <%= f.input :arrived_at, 
       :as => :string, 
       :requred => true, 
+	  :label => "When should the mail arrive?",
       :default => 1.week.from_now, 
       :start_year => Date.today.year%>
-    <%= f.button :submit %>
+    <%= f.button :submit, :value => "Create mail" %>
   <% end %>
 </section>

@@ -14,7 +14,7 @@ input[type="text"], input[type="email"], textarea{
 	
 	&:focus{
 		outline: none;
-		@include box-shadow(darken($comp, 5%) 0 0 5px);
+		@include box-shadow(#000 0 1px 3px);
 		background-color: #fff;
 	}
 }

@@ -1,0 +1,10 @@
+<aside class="sidebar">
+	<h2>Statistics</h2>
+	
+	<ul>
+		<li>Mails sent: <strong><%= Message.sent_mails_count(current_user) %></strong></li>
+		<li>Mails queued: <strong><%= Message.queued_mails_count(current_user) %></strong></li>
+		<li id="all-mails-count">All mails: <strong><%= current_user.messages.count %></strong></li>
+	</ul>
+	
+</aside>

@@ -1,11 +1,9 @@
 <nav>
-  <p>
-    <%=current_user.name%>
-    <%=link_to "New Mail", new_message_path, {:remote => true, :id => "new-mail-button"}%>
-  </p>
-  <ul>
-    <li><a href="index.html">Mails</a></li>
-    <li><a href="account.html">Account</a></li>
-    <li><a href="#">Log out</a></li>
-  </ul>
+	<p id="user">Hi <%= current_user.name %>!</p>
+	<%=link_to "New mail ›", new_message_path, {:remote => true, :id => "new-mail-button"}%>
+	<ul>
+		<li><a href="/">Mails</a></li>
+		<li><a href="#">Account</a></li>
+		<li><a href="#">Log out ›</a></li>
+	</ul>
 </nav>
