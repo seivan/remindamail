@@ -2,7 +2,6 @@ module MessagesHelper
   
   def next_message(messages)
     begin
-      debugger
       message = messages.queued.next.first
       date = message.arrived_at
     rescue NoMethodError => e

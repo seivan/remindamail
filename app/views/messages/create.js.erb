@@ -1,1 +1,3 @@
-alert("created!")
+$("section.modal#new-mail").remove()
+$("div.lb_overlay").remove()
+$("section#index").html("<%=escape_javascript(render(:partial => 'index_messages', :locals => {:current_user => current_user, :messages => @messages}))%>")

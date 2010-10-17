@@ -16,24 +16,9 @@
         		<%=link_to "Sent", messages_path(:sent => true)%>
 			</div>
 			
-			<% if current_user.messages.count%>
-			<table class="list">
-				<thead>
-					<tr><td>Subject</td><td>Arrives on</td><td>Created at</td></tr>
-				</thead>
-							
-				<tbody>
-				  <%=render @messages %>
-				</tbody>
-			
-			</table>
-			<%= will_paginate @messages %>
-
-			
-			<%else%>
-			<p>No mails!</p>
-			
-			<% end %>
+      <section id="index">
+        <%=render :partial => "index_messages", :locals => {:current_user => current_user, :messages => @messages}%>
+        </section>
 		</section>
 		
 		<%= render :partial => "sidebar" %>

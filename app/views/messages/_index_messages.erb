@@ -1,0 +1,22 @@
+<% if current_user.messages.count%>
+<table class="list">
+  <thead>
+    <tr>
+      <td>Subject</td>
+      <%if session[:sent] %>
+        <td>Arrived at</td>
+      <%else%>
+        <td>Arrives on</td>
+      <%end%>
+      <td>Created at</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%=render messages %>
+  </tbody>
+
+</table>
+<%= will_paginate messages %>
+
+<% end %>

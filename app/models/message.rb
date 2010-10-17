@@ -3,11 +3,13 @@ class Message < ActiveRecord::Base
   belongs_to :user
     
   #scopes
-  scope :next, order("arrived_at ASC").limit(1)
+  scope :next, lambda {where("arrived_at >= (?)", Date.today).order("arrived_at ASC").limit(1)}
   scope :sent, where(:sent => true)
   scope :queued, where(:sent => false)
-
-  #Validations
+  scope :arrived_at_asc, lambda {order("arrived_at ASC")}
+  scope :created_at_desc, lambda {order("created_at DESC")}
+  
+    #Validations
             
   validates :subject,
             :presence => true
@@ -27,5 +29,6 @@ class Message < ActiveRecord::Base
   def self.per_page
     10
   end
-      
+  
+
 end
