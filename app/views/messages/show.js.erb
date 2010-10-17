@@ -1,0 +1,10 @@
+$("body").append("<%= escape_javascript(render :partial => 'show_message', :locals => {:message => @message})%>");
+$("section.modal#show-mail").each(function(index){
+$("section.modal#show-mail").lightbox_me({
+        overlayCSS: {"background": "black", "opacity": "0.3"},
+        modalCSS: {"top": "100px"},
+        centered: true,
+        destroyOnClose : true,
+
+	});	
+});
