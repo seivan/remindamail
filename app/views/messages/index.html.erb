@@ -22,10 +22,10 @@
 				<h2>Queue</h2>
 			<%end%>
 			
-			<% if(@messages.length)%>
+			<% if current_user.messages.count%>
 			<table class="list">
 				<thead>
-					<tr><td>Subject</td><td>Arrives on</td><td>Created</td></tr>
+					<tr><td>Subject</td><td>Arrives on</td><td>Created at</td></tr>
 				</thead>
 							
 				<tbody>
