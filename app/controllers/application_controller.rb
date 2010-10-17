@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  helper_method :current_user, :signed_in?
+  helper_method :current_user, :signed_in?, :logged_in?
 
 
   protected
@@ -17,6 +17,8 @@ class ApplicationController < ActionController::Base
     @current_user = user
     session[:user_id] = user.id
   end
-  
+  def logged_in?
+    redirect_to root_path unless current_user
+  end
 
 end

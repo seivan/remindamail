@@ -68,6 +68,8 @@ GEM
     culerity (0.2.12)
     daemons (1.1.0)
     database_cleaner (0.5.2)
+    date_validator (0.5.9)
+      activemodel (>= 3.0.0)
     delayed_job (2.0.3)
       daemons
     diff-lcs (1.1.2)
@@ -212,6 +214,7 @@ DEPENDENCIES
   cucumber
   cucumber-rails
   database_cleaner
+  date_validator
   delayed_job
   factory_girl_rails
   faker

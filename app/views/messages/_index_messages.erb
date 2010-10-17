@@ -17,6 +17,7 @@
   </tbody>
 
 </table>
-<%= will_paginate messages %>
+
+<%= will_paginate(messages, :params => {:controller => "messages", :action => "index"}) %>
 
 <% end %>

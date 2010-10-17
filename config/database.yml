@@ -12,7 +12,7 @@ defaults: &defaults
   #port: 4001
   pool: 5
   username: root
-  password: 
+  password: seivanheidari
   host: localhost
 
   

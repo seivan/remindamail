@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   respond_to :html, :js
-  before_filter :current_user
+  before_filter :logged_in?
   def index
     session[:sent] = params[:sent] ? true : false
     puts "-------------------"
@@ -35,7 +35,6 @@ class MessagesController < ApplicationController
       end
     flash[:success] = "Mail is successfully queued and will be sent on #{@message.arrived_at}"
         #Add to mail queue
-      respond_with @message
     else
         flash[:failure] = "Mail was not queued, please fix the errors"
         render :new

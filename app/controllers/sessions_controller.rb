@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_filter :signed_in?, :only => [:destroy]
+  before_filter :logged_in?, :only => [:destroy]
   def new
       redirect_to messages_path if current_user
   end

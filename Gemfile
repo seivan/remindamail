@@ -12,6 +12,7 @@ gem "simple_form"
 gem "omniauth"
 gem "delayed_job"
 gem "compass", ">= 0.10.6.pre.1"
+gem "date_validator"
 # Use unicorn as the web server
 # gem 'unicorn'
 

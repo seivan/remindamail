@@ -14,9 +14,6 @@ class Message < ActiveRecord::Base
   validates :subject,
             :presence => true
   
-  validates :arrived_at,
-            :presence => true
-
   validates :to,
             :presence => true,
             :email_format => true
@@ -25,10 +22,13 @@ class Message < ActiveRecord::Base
             :presence => true,
             :email_format => true
 
-  
   def self.per_page
     10
   end
   
+  validates :arrived_at,
+            :presence => true,
+            :arrived_at_larger => true
+            
 
 end
