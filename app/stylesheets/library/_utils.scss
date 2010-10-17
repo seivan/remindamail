@@ -72,6 +72,10 @@
 	background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
 	background-image: -moz-linear-gradient(center top, $from 0%, $to 100%);
 }
+@mixin gradient-x($from, $to){
+	background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, from($from), to($to));
+	background-image: -moz-linear-gradient(0% 100% 0deg, $from, $to);
+}
 
 // Used in responsive design, make floated elements span 100% and remove the float:
 

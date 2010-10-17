@@ -19,7 +19,7 @@
     <%= f.input :content %>
     <%= f.input :arrived_at, 
       :as => :string, 
-      :requred => true, 
+      :required => true, 
 	    :label => "When should the mail arrive?",
       :default => 1.week.from_now, 
       :start_year => Date.today.year%>

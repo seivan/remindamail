@@ -23,6 +23,7 @@ section.modal{
 	background-color: rgba(255,255,255, 0.97);
 	width: 660px;
 	padding: 2em;
+	margin-bottom: 4em;
 	@include box-shadow(rgba(0,0,0, 0.5) 0 3px 10px);
 	@include border-radius(0.3em);
 	
@@ -50,8 +51,9 @@ section.modal{
 		color: #fff;
 		@include font(2.3em, 0);
 		display: inline-block;
+		height: 14px;
 		font-weight: bold;
-		padding: 7px 4px 4px;
+		padding: 8px 5px 0;
 		position: absolute;
 		top: -5px;
 		right: -7px;

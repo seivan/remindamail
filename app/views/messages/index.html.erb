@@ -15,12 +15,6 @@
 				<%=link_to "Not Sent", messages_path(:sent => false)%>
         		<%=link_to "Sent", messages_path(:sent => true)%>
 			</div>
-					
-			<% if(params[:sent]) %>
-				<h2>Sent</h2>
-			<%else%>
-				<h2>Queue</h2>
-			<%end%>
 			
 			<% if current_user.messages.count%>
 			<table class="list">
@@ -34,6 +28,10 @@
 			
 			</table>
 			<%= will_paginate @messages %>
+
+			
+			<%else%>
+			<p>No mails!</p>
 			
 			<% end %>
 		</section>

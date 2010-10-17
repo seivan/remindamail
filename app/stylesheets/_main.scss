@@ -147,6 +147,54 @@ h3{
 
 @import "partials/sidebar";
 
+/* =PAGINATION */
+/*-----------------------------------------*/
+
+div.pagination{
+	text-align: center;
+	margin: 2em 0;
+	font-size: 1.3em;
+	
+	a{
+		text-decoration: none;
+		color: #333;
+		
+		&:hover{
+			color: $accent;
+		}
+	}
+	.previous_page, .next_page{
+		margin: 0 1em;
+	}
+	
+	a[rel]{
+		display: inline-block;
+		line-height: 1;
+		border: 1px solid #ccc;
+		background-color: #fff;
+		padding: 0.3em 0.5em;
+		
+		&.next_page{
+			border-left: 0;
+		}
+		&.previous_page{
+			border-right: 0;
+		}
+		
+		&:hover{
+			border-color: transparentize($accent, 0.7);
+		}
+	}
+	
+	em, .disabled{
+		font-family: $sans;
+		color: #999;
+		font-style: italic;
+	}
+	em{
+		margin: 0 0.5em;
+	}
+}
 
 
 /* =MODAL */
