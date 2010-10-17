@@ -22,7 +22,7 @@
 				<h2>Queue</h2>
 			<%end%>
 			
-			<% if(@messages.length)%>
+			
 			<table class="list">
 				<thead>
 					<tr><td>Subject</td><td>Arrives on</td><td>Created</td></tr>
@@ -35,8 +35,8 @@
 			</table>
 			<%= will_paginate @messages %>
 			
-			<% end %>
 		</section>
 		
 		<%= render :partial => "sidebar" %>
+		<%= render :partial => "show"%>
 		

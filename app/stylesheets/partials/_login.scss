@@ -16,91 +16,94 @@ body.login{
 		#hero{
 			margin-bottom: 2em;
 		}
-		
-		#container{
-			@include clearfix;
-			margin-bottom: 2em;
 	
-			section.floated{
-				float: left;
-				@include column(380);
+			
+		p{
+			font-size: 1.3em;
+			line-height: 1.667em;
+		}
+		
+		section{
+			width: 75%;
+			margin: 0 auto 2em;	
+			
+			h2{
+				text-align: center;
+			}
+		}
+		
+		#login-list{
+			width: 50%;
+			margin-bottom: 4em;
+			
+			li{
+				list-style: none;
+				margin-bottom: 10px;
 				
-				&:first-child{
-					padding-right: 2em;
-				}
-				
-				p{
-					font-size: 1.3em;
-					line-height: 1.667em;
-				}
-				
-				#login-list{
-					list-style: none;
+				a{
+					font-size: 2em;
+					display: block;
+					color: #333;
+					padding: 5px;
+					@include border-radius(10px);
+					background-color: #eee;
+					border: 1px solid #ddd;
+					text-decoration: none;
 					
-					li{
-						margin-bottom: 10px;
+					img{
+						display: inline;
+						vertical-align: middle;
+						margin-right: 20px;
+						@include transition(all 0.2s ease-out);
+					}
+					
+					&:hover{
+					
+						background-color: #f1f1f1;
 						
-						a{
-							font-size: 2em;
-							display: block;
-							color: #333;
-							padding: 5px;
-							@include border-radius(10px);
-							background-color: #eee;
-							border: 1px solid #ddd;
-							text-decoration: none;
-							
-							img{
-								display: inline;
-								vertical-align: middle;
-								margin-right: 20px;
-								@include transition(all 0.2s ease-out);
-							}
-							
-							&:hover{
-							
-								background-color: #f1f1f1;
-								
-								img{
-									-webkit-transform: scale(1.15);
-									-moz-transform: scale(1.15);
-									transform: scale(1.15);
-								}
-							}
-							
-							&#facebook:hover{
-								color: #476aa5;
-							}
-							&#twitter:hover{
-								color: #3290c0;
-							}
+						img{
+							-webkit-transform: scale(1.15);
+							-moz-transform: scale(1.15);
+							transform: scale(1.15);
 						}
+					}
+					
+					&#facebook:hover{
+						color: #476aa5;
+					}
+					&#twitter:hover{
+						color: #3290c0;
 					}
 				}
 			}
 		}
+	}
+	
+	section#what{
+		border-bottom: 1px solid #eee;
+		padding-bottom: 2em;
+	}
+	
+	section#reviews{
+		@include clearfix;
 		
-		section#reviews{
-			@include clearfix;
+		p{
+			font-style: italic;
+			color: #555;
+			float: left;
+			width: 47%;
+			font-size: 1.2em;
 			
-			p{
-				font-style: italic;
-				color: #555;
-				float: left;
-				width: 47%;
-				font-size: 1.2em;
-				
-				&#first{
-					margin-right: 20px;
-				}
-				
-				cite{
-					font: normal bold 1em/1 $sans;
-					color: #333;
-					display: block;
-					margin-top: 5px;
-					padding-top: 5px;
-				}
+			&#first{
+				margin-right: 20px;
+			}
+			
+			cite{
+				font: normal bold 1em/1 $sans;
+				color: #333;
+				display: block;
+				margin-top: 5px;
+				padding-top: 5px;
 			}
 		}
 	}

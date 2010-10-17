@@ -62,4 +62,80 @@ section.modal{
 		float: left;
 		width: 45%;
 	}
+	
+	/* For the show modal */
+	&#show-mail{
+		background-color: lighten(yellow, 45%);
+		
+		header{
+			background-image: url(/images/show-mail-header.png);
+			border-top: 0;
+		}
+		
+		div#meta-container{
+			@include border-radius(1em);
+			background-color: #e7e7ce;
+			border: 1px solid darken(#e7e7ce, 10%);
+			margin: 2em 0;
+			padding: 2em;
+			@include transition(all 0.2s ease-in-out);
+			
+			&:hover{
+				background-color: lighten(#e7e7ce, 3%);
+			}
+		}
+		
+		#meta{
+			margin: 0 auto;
+			
+			tr{
+				font-size: 1.3em;
+				
+				td{
+					border-bottom: 1px solid rgba(0,0,0, 0.1);
+					height: 25px;
+					vertical-align: middle;
+					border-right: 1px solid rgba(0,0,0, 0.1);
+					
+					&:first-child, &:nth-child(3){
+						width: 70px;
+						font-weight: bold;
+						font-family: $sans;
+						
+					}
+					&:last-child, &:nth-child(2), &:nth-child(3){
+						padding: 0 10px;
+					}
+					&:last-child{
+						border-right: 0;
+					}
+				}
+			
+				&:last-child{
+					td{
+						border-bottom: 0;
+					}
+				}
+			
+			}
+		}
+		
+		#mail-content{
+			width: 80%;
+			margin: 0 auto;
+			background: transparent url(/images/symbol.png) no-repeat center top;
+			padding-top: 3em;
+			
+			p{
+				line-height: 1.8;
+				font-size: 1.5em;
+				font-family: Palatino, Georgia, Baskerville, "Times New Roman", Times, serif;
+				margin-bottom: 1em;
+			}
+		}
+		
+	}
+	
+	
+	
 }

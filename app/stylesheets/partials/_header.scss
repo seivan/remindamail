@@ -24,14 +24,16 @@ header[role="banner"]{
 	
 	nav{
 		float: right;
-		top: 1em;
-		@include column(220);
+//		@include column(220);
+		@include clearfix;
 		
 		#user{
 			background: transparent url(/images/user.png) no-repeat left top;
 			font: bold 1.4em/1 $sans;
 			color: #333;
 			padding-left: 25px;
+			float: right;
+			margin-bottom: 1em;
 		}
 		
 		#new-mail-button{
@@ -39,22 +41,19 @@ header[role="banner"]{
 			font-size: 1.4em;
 			color: #fff;
 			text-shadow: rgba(0,0,0, 0.6) 0 1px 1px;
-			position: absolute;
-			text-transform: none;
-			right: 0;
-			top: -0.3em;
+			float: right;
+			clear: both;
 			
 			&:active{
-				top: -0.3em;
+				top: auto;
 			}
 		}
 		
 		ul{
 			@include clearfix;
-			position: absolute;
-			bottom: -2.5em;
-			right: 0;
-			width: 100%;
+			float: left;
+			top: 0.4em;
+			margin-right: 1em;
 			
 			li{
 				float: left;
@@ -66,7 +65,9 @@ header[role="banner"]{
 				&:last-child{
 					margin-right: 0;
 				}
+				
 			}
+			
 		}
 	}
 }

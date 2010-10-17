@@ -1,5 +1,5 @@
 <h1>There are 
-	<%= link_to pluralize(current_user.messages.count, "mail"), messages_path(:sent => true), :id => "mail-amount" %>
+	<%= link_to pluralize(Message.queued_mails_count(current_user), "mail"), messages_path(:sent => true), :id => "mail-amount" %>
   in your queue. Next one will be sent in 
   <a href="view.html" id="next-mail">
     <%=next_mail%>

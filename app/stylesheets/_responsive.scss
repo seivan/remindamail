@@ -29,18 +29,8 @@
 		nav a#new-mail-button{
 			font-size: 1.8em;
 		}
-		
-		nav ul{
-			position: static;
-			margin-top: 2em;
-		}
 	}
-	
-	header h1{
-		float: none !important;
-		width: 100% !important;
-		margin-bottom: 20px;
-	}
+
 	
 }
 
@@ -58,9 +48,9 @@
 			text-align: center;
 		}
 		
-		nav{
+		nav{			
 			ul li{
-				width: 30%;
+				width: 60px;
 				margin-right: 0;
 				text-align: center;
 			}
