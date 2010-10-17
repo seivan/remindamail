@@ -1,6 +1,5 @@
 class Authorization < ActiveRecord::Base
   belongs_to :user
-
   
   validates :user_id,
             :presence => true
@@ -11,6 +10,7 @@ class Authorization < ActiveRecord::Base
             
   validates :provider,
             :presence => true            
+
   def self.find_from_auth_hash(auth_hash)
     Authorization.find_by_provider_and_uid(auth_hash['provider'], auth_hash['uid'])
   end

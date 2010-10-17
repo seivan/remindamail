@@ -1,5 +1,9 @@
 <tr>
+<<<<<<< HEAD
   <td><a href="#"><%=message.subject%></a></td>
+=======
+  <td><%=link_to(message.subject, message, :remote => true)%></td>
+>>>>>>> seivan
   <td>
     <time datetime=<%=message.arrived_at.strftime("%y %m %d")%>>
       <%=message.arrived_at.strftime("%a, %d %b %Y")%>
