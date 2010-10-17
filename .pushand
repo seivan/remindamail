@@ -1,0 +1,16 @@
+#!/bin/bash
+  
+  # Install the application's gem dependencies with Bundler
+  echo "Installing Gems.."
+  unset GIT_DIR && bundle install --without development test cucumber
+
+  # Create and migrate the database
+  echo "Migrating database"
+  rake db:create RAILS_ENV=production
+  #mv config/example_database.yml config/database.yml
+  rake db:migrate RAILS_ENV=production
+  rake db:seed RAILS_ENV=production
+  # Restart Passenger
+  echo "Restarting Passenger"
+  mkdir -p tmp
+  touch tmp/restart.txt
