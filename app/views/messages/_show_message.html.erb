@@ -10,7 +10,13 @@
 			  <td><time datetime=<%=message.created_at.strftime("%y %m %d")%>>
       <%=message.created_at.strftime("%a, %d %b %Y")%>
     </time></td></tr>
-			<tr><td>To</td><td><%=message.to%></td><td>Arrived</td><td><time datetime=<%=message.arrived_at.strftime("%y %m %d")%>>
+			<tr><td>To</td><td><%=message.to%></td>
+			  <%if message.sent%>
+			    <td>Arrived at</td>
+			  <%else%>
+			    <td>Arrives on</td>
+			  <%end%>
+			  <td><time datetime=<%=message.arrived_at.strftime("%y %m %d")%>>
       <%=message.arrived_at.strftime("%a, %d %b %Y")%>
     </time></td></tr>
 		</table>

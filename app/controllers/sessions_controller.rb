@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   before_filter :signed_in?, :only => [:destroy]
   def new
-    
+      redirect_to messages_path if current_user
   end
   
   def create
@@ -19,6 +19,7 @@ class SessionsController < ApplicationController
   
   def destroy
     current_user = nil
+    session[:user_id] = nil
     flash[:success] = "You have been logged out"
     redirect_to root_path
   end

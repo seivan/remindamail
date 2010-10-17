@@ -1,12 +1,6 @@
 $(function() {
-	// Keyboard shortcuts	
-	$(document).bind("keypress", function(evt){
-		switch(evt.which){
-			case 98: $("body").toggleClass("grid");
-					break;
-		}
-	});
-	
+  $('.pagination a').attr('data-remote', 'true');
+  
 	$("table.list a").click(function(){
 		$("section.modal").lightbox_me({
 		        overlayCSS: {"background": "black", "opacity": "0.3"},

@@ -5,6 +5,9 @@
 	</header>
   
   <%= simple_form_for(@message, :remote => true) do |f| %>
+  <div id="errors">
+  <%=render :partial => 'shared/error_messages', :locals => {:target => @message}%>
+  </div>
     <div class="floats">
       <%= f.label :from%>
       <%= f.text_field :from%>
@@ -25,4 +28,5 @@
       :start_year => Date.today.year%>
     <%= f.button :submit, :value => "Create mail" %>
   <% end %>
+  <% params[:sent] = params[:sent]%>
 </section>

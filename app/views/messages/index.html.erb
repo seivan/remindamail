@@ -15,27 +15,10 @@
 				<%=link_to "Not Sent", messages_path(:sent => false)%>
         		<%=link_to "Sent", messages_path(:sent => true)%>
 			</div>
-					
-			<% if(params[:sent]) %>
-				<h2>Sent</h2>
-			<%else%>
-				<h2>Queue</h2>
-			<%end%>
 			
-			<% if current_user.messages.count%>
-			<table class="list">
-				<thead>
-					<tr><td>Subject</td><td>Arrives on</td><td>Created at</td></tr>
-				</thead>
-							
-				<tbody>
-				  <%=render @messages %>
-				</tbody>
-			
-			</table>
-			<%= will_paginate @messages %>
-			
-			<% end %>
+      <section id="index">
+        <%=render :partial => "index_messages", :locals => {:current_user => current_user, :messages => @messages}%>
+        </section>
 		</section>
 		
 		<%= render :partial => "sidebar" %>

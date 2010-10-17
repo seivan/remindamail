@@ -1,3 +1,7 @@
+if($("section.modal#new-mail").length) {
+  $("#errors").html("<%= escape_javascript(render :partial => 'shared/error_messages', :locals => {:target => @message})%>")
+}
+else {
 $("body").append("<%= escape_javascript(render :partial => 'form')%>")
 $("section.modal#new-mail").each(function(index){
 $("section.modal#new-mail").lightbox_me({
@@ -11,10 +15,9 @@ $("section.modal#new-mail").lightbox_me({
 
 	});	
 });
-
+}
 $("#message_arrived_at").
-	datepicker({dateFormat: "yy-mm-dd", minDate: new Date()}).
-	blur(function(){
-		
+	datepicker({dateFormat: "yy-mm-dd", minDate: 1}).
+	blur(function(){		
 	});
 
