@@ -1,14 +1,5 @@
-<<<<<<< HEAD
-<h1>There are 
-	<%= link_to pluralize(Message.queued_mails_count(current_user), "mail"), messages_path(:sent => true), :id => "mail-amount" %>
-  in your queue. Next one will be sent in 
-  <a href="view.html" id="next-mail">
-    <%=next_mail%>
-  </a>
-=======
 <h1>There
 	<%= link_to_and_pluralize_mail(current_user.messages.queued)%>
   in your queue. Next one will be sent
   <%=next_message(current_user.messages)%>
->>>>>>> seivan
 </h1>

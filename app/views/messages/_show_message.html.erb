@@ -1,0 +1,24 @@
+<section class="modal" id="show-mail">
+	<header>
+		<h2><%= message.subject %></h2>
+		<a class="close">×</a>
+	</header>
+	
+	<div id="meta-container">
+		<table id="meta">
+			<tr><td>From</td><td><%=message.from%></td><td>Created at</td>
+			  <td><time datetime=<%=message.created_at.strftime("%y %m %d")%>>
+      <%=message.created_at.strftime("%a, %d %b %Y")%>
+    </time></td></tr>
+			<tr><td>To</td><td><%=message.to%></td><td>Arrived</td><td><time datetime=<%=message.arrived_at.strftime("%y %m %d")%>>
+      <%=message.arrived_at.strftime("%a, %d %b %Y")%>
+    </time></td></tr>
+		</table>
+	</div>
+	
+	<div id="mail-content">
+		<%= message.content %>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		
+	</div>
+	
+</section>

@@ -4,7 +4,7 @@
 		<h2>New mail</h2>
 	</header>
   
-  <%= simple_form_for @message do |f| %>
+  <%= simple_form_for(@message, :remote => true) do |f| %>
     <div class="floats">
       <%= f.label :from%>
       <%= f.text_field :from%>
