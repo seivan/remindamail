@@ -47,6 +47,9 @@ header[role="banner"]{
 			&:active{
 				top: auto;
 			}
+			&:hover{
+				background-color: lighten(#63b834, 5%) ;
+			}
 		}
 		
 		ul{

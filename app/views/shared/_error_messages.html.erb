@@ -1,7 +1,10 @@
 <%if target.errors.any?%>
-  <div id="error_explanation">
+<div>
+	<h2>Something went wrong!</h2>
+  <ul id="error_explanation">
       <%target.errors.full_messages.each do |msg|%>
-        <%=msg%>
+        <li><%=msg%></li>
         <%end%>
-  </div>
+  </ul>
+</div>
 <%end%>

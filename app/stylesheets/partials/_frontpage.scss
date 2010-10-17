@@ -71,9 +71,15 @@
 			text-align: center;
 			float: left;
 			width: 50%;
+			color: #fff;
+			text-shadow: #000 0 1px 0;
+			text-decoration: none;
+			background-color: darken($accent, 10%);
 			
-			&.current{
+			&.inactive{
 				background-color: #eee;
+				color: #999;
+				text-shadow: none;
 			}
 		}
 	}
