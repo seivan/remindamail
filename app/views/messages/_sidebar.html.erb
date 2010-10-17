@@ -2,8 +2,8 @@
 	<h2>Statistics</h2>
 	
 	<ul>
-		<li>Mails sent: <strong><%= queued_mails %></strong></li>
-		<li>Mails queued: <strong><%= current_user.messages.count %></strong></li>
+		<li>Mails sent: <strong><%= Message.sent_message_count(current_user) %></strong></li>
+		<li>Mails queued: <strong><%= Message.queued_message_count(current_user) %></strong></li>
 		
 	</ul>
 	

@@ -19,10 +19,8 @@ class Message < ActiveRecord::Base
     first
   end
   
-  def self.queued_mails(user_id)
-    Message.
-      #where(:user_id => user_id, :status => true)
-      find(:all).length
+  def self.sent_mails_count(user_id)
+    Message.where(:user_id => user_id, :status => true).count
   end
   
 end

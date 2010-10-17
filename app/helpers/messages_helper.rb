@@ -5,8 +5,5 @@ module MessagesHelper
     date ? time_ago_in_words(date) : "when you write one!"
   end
   
-  def queued_mails
-    amount = Message.queued_mails(current_user.id)
-  end
   
 end
