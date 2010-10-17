@@ -3,7 +3,6 @@
 	<%=link_to "New mail ›", new_message_path, {:remote => true, :id => "new-mail-button"}%>
 	<ul>
 		<li><%=link_to "Mails", messages_path%></li>
-		<li><a href="#">Account</a></li>
 		<li><%=link_to "Log out", session_path(current_user), :method => :delete%></li>
 	</ul>
 </nav>
