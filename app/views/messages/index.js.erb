@@ -1,2 +1,3 @@
-$("section#index").html("<%=escape_javascript(render(:partial => 'index_messages', :locals => {:current_user => current_user, :messages => @messages}))%>")
+$("section#index").html("<%=escape_javascript(render(:partial => 'index_messages', :locals => {:current_user => current_user, :messages => @messages}))%>");
 $('.pagination a').attr('data-remote', 'true');
+$("div#toggle-view").html("<%=escape_javascript(render(:partial => 'tabs'))%>");

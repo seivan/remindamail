@@ -1,8 +1,11 @@
 class MessagesController < ApplicationController
   respond_to :html, :js
-  before_filter :signed_in?
+  before_filter :current_user
   def index
-    session[:sent] = params[:sent]
+    session[:sent] = params[:sent] ? true : false
+    puts "-------------------"
+    puts session[:sent]
+        puts "-------------------"
     if session[:sent]
       @messages = current_user.messages.sent.arrived_at_asc.paginate(:page => params[:page], :per_page => 5)
     else

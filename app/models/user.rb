@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
             :presence => true
   
   def self.create_from_auth_hash!(auth_hash)
-    User.create(:name => auth_hash['user_info']['name'])
+    user_info = auth_hash['user_info']
+    User.create(:name => user_info['name'])
   end
 end

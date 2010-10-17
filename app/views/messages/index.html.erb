@@ -8,18 +8,20 @@
 <%=content_for :header do%>
   <%= render :partial => "navigation" %>
 <%end%>
-<%= render :partial => "statistics" %>
 
+<h1>
+  <%= render :partial => "statistics" %>
+</h1>
 		<section>
 			<div id="toggle-view">
-				<%=link_to "Not Sent", messages_path(:sent => false)%>
-        		<%=link_to "Sent", messages_path(:sent => true)%>
+        <%=render :partial => "tabs"%>
 			</div>
 			
       <section id="index">
         <%=render :partial => "index_messages", :locals => {:current_user => current_user, :messages => @messages}%>
         </section>
 		</section>
-		
+	<aside class="sidebar">
 		<%= render :partial => "sidebar" %>
-		
+	</aside>
+  </header>		

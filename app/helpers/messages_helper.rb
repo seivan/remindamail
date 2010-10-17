@@ -27,4 +27,22 @@ module MessagesHelper
     end
     link_to(link_name, path, :remote => true, :id => "mail-amount")
   end
+  
+  def link_to_queued(sent)
+    if sent
+      link_to("Queued", messages_path(:sent => false), :remote => true, :class => "inactive")
+    else
+      link_to("Queued", messages_path(:sent => false), :remote => true)
+    end
+    
+  end
+
+  def link_to_sent(sent)
+    if sent
+      link_to("Sent", messages_path(:sent => true), :remote => true)
+    else
+      link_to("Sent", messages_path(:sent => true), :remote => true, :class => "inactive")
+    end
+  end
+  
 end
