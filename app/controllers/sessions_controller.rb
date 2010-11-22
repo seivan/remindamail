@@ -14,8 +14,7 @@ class SessionsController < ApplicationController
       @auth = Authorization.create_from_auth_hash(auth_hash, current_user)
     end
     self.current_user = @auth.user
-    #redirect_to messages_path
-    render :text => auth_hash["extra"].to_yaml,:content_type => 'text/yaml'
+    redirect_to messages_path
   end
   
   def destroy
