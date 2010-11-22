@@ -1,18 +1,11 @@
-# MySQL.  Versions 4.1 and 5.0 are recommended.
-#
-# Install the MySQL driver:
-#   gem install mysql2
-#
-# And be sure to use new-style password hashing:
-#   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 defaults: &defaults
   adapter: mysql2
   encoding: utf8
   reconnect: false
   #port: 4001
   pool: 5
-  username: root
-  password: SeivanHeidari
+  username: remindamail
+  password: seivanheidari
   host: localhost
 
   

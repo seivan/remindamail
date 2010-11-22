@@ -3,9 +3,6 @@ class MessagesController < ApplicationController
   before_filter :logged_in?
   def index
     session[:sent] = params[:sent] ? true : false
-    puts "-------------------"
-    puts session[:sent]
-        puts "-------------------"
     if session[:sent]
       @messages = current_user.messages.sent.arrived_at_asc.paginate(:page => params[:page], :per_page => 5)
     else
