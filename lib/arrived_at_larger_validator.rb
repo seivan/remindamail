@@ -1,5 +1,5 @@
 class ArrivedAtLargerValidator < ActiveModel::EachValidator
     def validate_each(record, attribute, value)
-      record.errors[attribute] << "Arrived at must be after today" if value <= Date.today
+      record.errors[attribute] << "Arrived at must be after today" if value && value <= Date.today
     end
 end
