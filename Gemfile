@@ -11,7 +11,7 @@ gem "will_paginate", :git => "git://github.com/mislav/will_paginate.git", :branc
 gem "simple_form"
 gem "omniauth"
 gem "compass"
-gem "date_validator"
+#gem "date_validator"
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -29,7 +29,7 @@ gem "date_validator"
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :development, :test do
-	gem "gitpusshuten"
+	  gem "gitpusshuten"
     gem "rspec"
     gem "rspec-rails"
     gem "cucumber"

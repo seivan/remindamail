@@ -1,0 +1,6 @@
+server {
+  listen 80;
+  server_name remindamail.it www.remindamail.it;
+  root /home/remindamail/remindamail.production/public;
+  passenger_enabled on; # For Phusion Passenger users
+}
