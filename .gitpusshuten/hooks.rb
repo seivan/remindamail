@@ -14,8 +14,10 @@
 # http://secretpreview.gitpusshuten.com/documentation/getting-started/deployment-hooks/
 
 perform_on :staging, :production do
-  run "whenever --update-crontab remindamail-sender"
-  run "crontab -l"
+  pre "Configure crontab" do
+    run "whenever --update-crontab remindamail-sender"
+    run "crontab -l"
+  end
 end
 
 perform_on :staging do
