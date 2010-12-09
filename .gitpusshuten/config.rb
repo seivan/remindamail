@@ -26,7 +26,7 @@ pusshuten 'remindamail-sender', :staging, :production do
   modules do |m|
     m.add :bundler
     m.add :mysql
-    m.add :active_record
+    #m.add :active_record
     # m.add :passenger
     # m.add :nginx
     # m.add :apache
