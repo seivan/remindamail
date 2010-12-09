@@ -32,7 +32,7 @@ end
 
 date = 2.hours.from_now.to_date
 
-puts Message.queued.where("arrived_at <= ?",date).count
+puts "Messages to send; #{Message.queued.where('arrived_at <= ?',date).count} on #{Time.now}"
 
 
 options = { :address              => 'smtp.sendgrid.net',
@@ -66,8 +66,17 @@ end
    http://remindamail.it/ \n"""                     
    str << "\n"
    mail.body = str
-   puts mail.body
-   message.update_attribute(:sent, true) if mail.deliver
+      
+   if mail.deliver
+     puts "SUCCESS"
+     message.update_attribute(:sent, true) 
+     puts mail
+     puts Time.now
+   else 
+     puts "FAIL"
+     puts mail
+     puts Time.now
+   end
  end
  
 #puts mail.to_s #=> "From: mikel@test.lindsaar.net\r\nTo: you@.
