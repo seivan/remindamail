@@ -1,0 +1,44 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    aaronh-chronic (0.3.9)
+    activemodel (3.0.3)
+      activesupport (= 3.0.3)
+      builder (~> 2.1.2)
+      i18n (~> 0.4)
+    activerecord (3.0.3)
+      activemodel (= 3.0.3)
+      activesupport (= 3.0.3)
+      arel (~> 2.0.2)
+      tzinfo (~> 0.3.23)
+    activesupport (3.0.3)
+    arel (2.0.6)
+    builder (2.1.2)
+    gitpusshuten (0.0.6)
+      activesupport (~> 3.0.0)
+      highline (~> 1.6.0)
+      json (~> 1.4.0)
+      net-scp (~> 1.0.0)
+      net-ssh (~> 2.0.0)
+      rainbow (~> 1.1.0)
+    highline (1.6.1)
+    i18n (0.5.0)
+    json (1.4.6)
+    mysql2 (0.2.6)
+    net-scp (1.0.4)
+      net-ssh (>= 1.99.1)
+    net-ssh (2.0.23)
+    rainbow (1.1)
+    tzinfo (0.3.23)
+    whenever (0.6.2)
+      aaronh-chronic (>= 0.3.9)
+      activesupport (>= 2.3.4)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  activerecord
+  gitpusshuten
+  mysql2
+  whenever

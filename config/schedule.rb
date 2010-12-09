@@ -7,9 +7,9 @@
 #
  #set :output, "/home/remindamail/applications/sender/mailer.log"
 #
-env :GEM_PATH, "/home/remindamail/.rvm/gems/ruby-1.9.2-p0"
+#env :GEM_PATH, "/home/remindamail/.rvm/gems/ruby-1.9.2-p0"
  every 1.minute do
-  command "ruby /home/remindamail/applications/sender/schema.rb"
+  command "ruby /home/remindamail/remindamail-sender/schema.rb"
    #runner "MyModel.some_method"
    #rake "some:great:rake:task"
 end

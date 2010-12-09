@@ -9,8 +9,8 @@ ActiveRecord::Base.establish_connection(
   :adapter => "mysql2",
   :host => "localhost",
   :database => "remindamail_development",
-  :username => "root",
-  :password => "SeivanHeidari"
+  :username => "remindamail",
+  :password => "seivanheidari"
 )
 
 
