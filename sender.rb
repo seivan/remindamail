@@ -68,7 +68,7 @@ end
    http://remindamail.it/ \n"""                     
    str = "\n"
    mail.body = str
-   puts mail
+   puts mail.body
    #message.update_attribute(:sent, true) if mail.deliver
  end
  
