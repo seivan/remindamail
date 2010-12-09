@@ -1,4 +1,5 @@
-set :output, {:error => 'error.log', :standard => 'cron.log'}
+path = "/home/remindamail/remindamail-sender/errors/"
+set :output, {:error => "#{path}error.log", :standard => "#{path}cron.log"}
 # Use this file to easily define all of your cron jobs.
 #
 # It's helpful, but not entirely necessary to understand cron before proceeding.
