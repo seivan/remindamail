@@ -32,8 +32,7 @@ end
 
 date = 2.hours.from_now.to_date
 
-puts Message.queued.where("arrived_at = ?",date).count
-puts Message.queued.where("arrived_at = ?",date).count
+puts Message.queued.where("arrived_at <= ?",date).count
 
 
 require 'mail'
