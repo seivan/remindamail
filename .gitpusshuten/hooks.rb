@@ -17,6 +17,7 @@ perform_on :staging, :production do
   # pre "Echo out something" do
   #   run 'echo "Ready to Deploy"'
   run "whenever --update-crontab remindamail-sender"
+  run "crontab -l"
   # end
 end
 
