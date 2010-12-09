@@ -1,5 +1,5 @@
 require 'rubygems'
-
+require 'mail'
 require 'active_record'
 require 'mysql2'
 
@@ -34,8 +34,6 @@ date = 2.hours.from_now.to_date
 
 puts Message.queued.where("arrived_at <= ?",date).count
 
-
-require 'mail'
 
 options = { :address              => 'smtp.sendgrid.net',
             :port                 => 25,

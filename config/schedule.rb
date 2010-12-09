@@ -1,4 +1,5 @@
-path = "/home/remindamail/remindamail-sender.production/errors/"
+path = "/home/remindamail/remindamail-sender.production/log/"
+env :MAILTO, ""
 set :output, {:error => "#{path}error.log", :standard => "#{path}cron.log"}
 # Use this file to easily define all of your cron jobs.
 #
