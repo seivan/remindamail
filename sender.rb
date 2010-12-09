@@ -63,8 +63,9 @@ end
    mail.from = message.from                                                                         
    mail.to    = message.to                                                                          
    mail.subject = message.subject                                                                   
-   str = "This is a message from #{message.user.name}  with #{message.user.authorizations.first.prof
-ile_url} \n sent to you by Remind-a-Mail http://re-bay.r10.railsrumble.com/ \n"                     
+   str = """This is a message from #{message.user.name} 
+   with #{message.user.authorizations.first.profile_url} \n sent to you by Remind-a-Mail 
+   http://remindamail.it/ \n"""                     
    str = "\n"
    mail.body = str
    puts mail
