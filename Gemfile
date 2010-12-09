@@ -5,4 +5,4 @@ source "http://rubygems.org"
 gem "mysql2"
 gem "activerecord"
 gem "gitpusshuten"
-gem "whenever"
+gem "whenever",:require => false

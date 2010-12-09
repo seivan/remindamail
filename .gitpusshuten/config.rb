@@ -24,14 +24,15 @@ pusshuten 'remindamail-sender', :staging, :production do
   end
 
   modules do |m|
-    # m.add :bundler
-    # m.add :active_record
+    m.add :bundler
+    m.add :mysql
+    m.add :active_record
     # m.add :passenger
     # m.add :nginx
     # m.add :apache
     # m.add :nanoc
     # m.add :rvm
-    # m.add :mysql
+    
     # m.add :redis
   end
 
