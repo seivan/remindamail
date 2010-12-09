@@ -69,7 +69,7 @@ end
    str << "\n"
    mail.body = str
    puts mail.body
-   message.update_attribute(:sent, true) if mail.deliver
+   # message.update_attribute(:sent, true) if mail.deliver
  end
  
 #puts mail.to_s #=> "From: mikel@test.lindsaar.net\r\nTo: you@.
