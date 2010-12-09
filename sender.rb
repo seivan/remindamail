@@ -66,7 +66,7 @@ end
    str = """This is a message from #{message.user.name} 
    with #{message.user.authorizations.first.profile_url} \n sent to you by Remind-a-Mail 
    http://remindamail.it/ \n"""                     
-   str = "\n"
+   str << "\n"
    mail.body = str
    puts mail.body
    #message.update_attribute(:sent, true) if mail.deliver
