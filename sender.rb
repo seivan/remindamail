@@ -8,7 +8,7 @@ require 'mysql2'
 ActiveRecord::Base.establish_connection(
   :adapter => "mysql2",
   :host => "localhost",
-  :database => "remindamail_development",
+  :database => "remindamail_production",
   :username => "remindamail",
   :password => "seivanheidari"
 )
