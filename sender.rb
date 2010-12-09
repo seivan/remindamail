@@ -66,7 +66,7 @@ Mail.defaults do
 end                                                                                                 
                                                                                                     
                                                                                                     
- Message.queued.where("arrived_at = ?",date).each do |message|                                      
+ Message.queued.where("arrived_at <= ?",date).each do |message|                                      
    mail = Mail.new                                                                                  
    mail.from = message.from                                                                         
    mail.to    = message.to                                                                          
