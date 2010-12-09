@@ -43,23 +43,15 @@ options = { :address              => 'smtp.sendgrid.net',
             :password             => 'asdasd',
             :domain               => "remindamail.com",
             :authentication       => 'plain'}
+                                                                                                                                                                                    
                                                                                                     
-require 'mail'                                                                                      
-                                                                                                    
-options = { :address              => 'smtp.sendgrid.net',                                           
-            :port                 => 25,                                                            
-            :user_name            => 'remindamail@gmail.com',                                       
-            :password             => 'asdasd',                                                      
-            :domain               => "remindamail.com",                                             
-            :authentication       => 'plain'}                                                       
-                                                                                                    
-options2 = { :address              => 'smtp.gmail.com',                                             
-            :port                 => 25,                                                            
-            :user_name            => 'remindamail@gmail.com',                                       
-            :password             => 'asdasdasdasd',                                                
-            :domain               => "remindamail.com",                                             
-            :authentication       => 'plain',                                                       
-            :enable_starttls_auto => true  }                                                        
+# options2 = { :address              => 'smtp.gmail.com',                                             
+#             :port                 => 25,                                                            
+#             :user_name            => 'remindamail@gmail.com',                                       
+#             :password             => 'asdasdasdasd',                                                
+#             :domain               => "remindamail.com",                                             
+#             :authentication       => 'plain',                                                       
+#             :enable_starttls_auto => true  }                                                        
                                                                                                     
 Mail.defaults do                                                                                    
   delivery_method :smtp, options                                                                    
@@ -76,8 +68,9 @@ ile_url} \n sent to you by Remind-a-Mail http://re-bay.r10.railsrumble.com/ \n"
    str = "\n"
    mail.body = str
    puts mail
-     #message.update_attribute(:sent, true) if mail.deliver
+   #message.update_attribute(:sent, true) if mail.deliver
  end
+ 
 #puts mail.to_s #=> "From: mikel@test.lindsaar.net\r\nTo: you@.
 
 
